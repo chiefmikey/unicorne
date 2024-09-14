@@ -34,63 +34,63 @@
 };
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default {
-                        bindings = <
+        default_layer {
+            bindings = <
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &kp ESC     &kp Q      &kp W      &kp E      &kp R      &kp T                                &kp Y    &kp U      &kp I      &kp O      &kp P      &kp BSPC
+     &kp ESC         &kp Q    &kp W    &kp E    &kp R    &kp T                                &kp Y    &kp U    &kp I    &kp O    &kp P    &kp BSPC
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &mt LCTRL GRAVE &kp A  &kp S      &kp D      &kp F      &kp G                                &kp H    &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+     &mt LCTRL GRAVE &kp A    &kp S    &kp D    &kp F    &kp G                                &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp SQT
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &kp LSHFT   &kp Z      &kp X      &kp C      &kp V      &kp B                                &kp N    &kp M      &kp COMMA   &kp DOT   &kp FSLH   &kp RSHFT
+     &kp LSHFT       &kp Z    &kp X    &kp C    &kp V    &kp B                                &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 // |----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
-                                                &kp LGUI  &mt LALT SPACE &lt 3 RET  &lt 3 RET  &lt 1 SPACE &lt 2 BSLH
+                                                &kp LGUI  &mt LALT SPACE &lt 3 RET  &lt 1 SPACE &lt 2 BSLH
 //                                             |----------+----------+----------|  |----------+----------+----------|
-                        >;
-                };
+            >;
+        };
 
-                lower {
-                        bindings = <
+        lower_layer {
+            bindings = <
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6                              &kp N7     &kp N8     &kp N9     &kp N0     &kp EQUAL  &trans
+     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6                                &kp N7    &kp N8    &kp N9    &kp N0    &kp EQUAL &trans
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &kp TAB    &kp AT     &kp DLLR   &kp LBKT   &kp LPAR   &kp LBRC                            &kp RBRC   &kp RPAR   &kp RBKT   &kp MINUS  &kp UP     &kp BSLH
+     &kp TAB   &kp AT    &kp DLLR  &kp LBKT  &kp LPAR  &kp LBRC                              &kp RBRC  &kp RPAR  &kp RBKT  &kp MINUS &kp UP    &kp BSLH
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-     &trans     &kp AMPS   &kp HASH   &kp PRCNT  &kp EXCL   &kp PLUS                            &kp CARET  &trans     &kp PG_UP  &kp LEFT   &kp DOWN   &kp RIGHT
+     &trans    &kp AMPS  &kp HASH  &kp PRCNT &kp EXCL  &kp PLUS                              &kp CARET &trans    &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT
 // |----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
-                                                 &kp STAR   &email     &trans        &trans     &trans     &trans
+                                                &kp STAR  &trans    &trans        &trans     &trans     &trans
 //                                             |----------+----------+----------|  |----------+----------+----------|
-                        >;
-                };
+            >;
+        };
 
-                raise {
-                        bindings = <
+        raise_layer {
+            bindings = <
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-      &none     &none      &none      &none      &none      &none                               &none      &none      &none      &none      &none      &kp C_PLAY_PAUSE
+     &trans   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                &kp N6    &kp LPAR &kp RPAR &kp MINUS  &kp PLUS     &kp C_PLAY_PAUSE
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-      &none     &none      &none      &none      &none      &none                               &none      &none      &none      &none      &kp C_VOL_UP &kp C_MUTE
+     &kp CLCK &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH                              &kp F1    &kp F2   &kp F3   &kp F4     &kp C_VOL_UP &kp F6
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-      &none     &none      &none      &none      &none      &none                               &none      &none      &none      &kp C_PREV &kp C_VOL_DN &kp C_NEXT
+     &trans   &kp ESC   &kp LGUI  &kp RALT  &kp CLCK  &kp DQT                               &kp F7    &kp F8   &kp F9   &kp C_PREV &kp C_VOL_DN &kp C_NEXT
 // |----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
-                                                 &none     &none     &none        &none     &none     &none
+                                                &trans   &trans    &trans        &trans     &trans     &trans
 //                                             |----------+----------+----------|  |----------+----------+----------|
-                        >;
-                };
+            >;
+        };
 
-                func {
-                        bindings = <
+        adjust_layer {
+            bindings = <
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-      &none     &none      &none      &none      &none      &none                               &none      &none      &none      &none      &none      &none
+     &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none &none &none &none &none &bt BT_CLR
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-      &none     &none      &none      &none      &none      &none                               &none      &none      &none      &none      &none      &none
+     &out OUT_USB &none        &none        &none        &none        &none                  &none &none &none &none &none &none
 // |----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
      &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_SPD &rgb_ug RGB_SPI &rgb_ug RGB_TOG
 // |----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
-                                                 &bl BL_TOG &bl BL_CYCLE &none       &none      &bl BL_DEC &bl BL_INC
+                                                &bl BL_TOG &bl BL_CYCLE &trans       &bl BL_DEC &bl BL_INC
 //                                             |----------+----------+----------|  |----------+----------+----------|
-                        >;
-                };
+            >;
         };
+    };
 };
