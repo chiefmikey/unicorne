@@ -18,7 +18,7 @@ jobs:
           path: ./artifact
 
       - name: Move artifact to root
-        run: mv ./artifact/firmware.zip ./firmware.zip
+        run: mv ./artifact/firmware.zip ./zmk/firmware.zip
 
       - name: Configure git
         run: |
@@ -27,6 +27,6 @@ jobs:
 
       - name: Commit artifact
         run: |
-          git add firmware.zip
-          git commit -m "Add build artifact"
+          git add ./zmk/firmware.zip
+          git commit -m "Update zmk firmware"
           git push
