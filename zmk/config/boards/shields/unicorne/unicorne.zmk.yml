@@ -1,8 +1,0 @@
-file_format: "1"
-id: unicorne
-name: unicorne
-type: shield
-url: https://github.com/fgebhart/unicorne/
-requires: [puchi_ble_v1]
-features:
-  - keys
