@@ -2,6 +2,14 @@
 
 ## Unicorne
 
-_Custom [ZMK](https://zmk.dev/) firmware configuration_
+_Custom [QMK](https://qmk.fm/) firmware configuration_
 
-### [QMK](./qmk/) || [ZMK](./zmk/)
+```bash
+qmk setup
+
+qmk config
+
+qmk compile
+
+qmk flash
+```
