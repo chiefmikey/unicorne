@@ -20,8 +20,9 @@ enum {
 // Custom keycodes
 enum custom_keycodes {
     EMAIL = SAFE_RANGE,
-    ZSK,
-    ZIFK
+    SC_SELECT,
+    SC_AREA,
+    SC_AREA2
 };
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -44,15 +45,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
-        case ZSK:
+        case SC_SELECT:
             if (record->event.pressed) {
-                // PLAY_SONG(ZELDA_SECRET);
+                SEND_STRING(SS_LGUI(SS_LSFT("4")));
             }
             break;
 
-        case ZIFK:
+        case SC_AREA:
             if (record->event.pressed) {
-                // PLAY_SONG(ZELDA_ITEM_FANFARE);
+                SEND_STRING(SS_LGUI(SS_LSFT("5")));
+            }
+            break;
+        case SC_AREA2:
+            if (record->event.pressed) {
+                SEND_STRING(SS_LGUI(SS_LSFT("5")));
+                wait_ms(50);
+                SEND_STRING(SS_TAP(X_ENTER));
             }
             break;
     }
@@ -109,13 +117,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------'     '---------''----------------------'
  */
 [_RAISE] = LAYOUT(
-    QK_AUDIO_CLICKY_TOGGLE, _______, _______, _______, _______, _______,                   _______, _______, KC_MUTE,   KC_MPLY, _______, _______,
-    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, KC_VOLU, KC_MSEL,
+    QK_BOOTLOADER, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, KC_MPLY,
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, KC_VOLU, KC_MUTE,
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, KC_MPRV, KC_VOLD, KC_MNXT,
-                                    KC_PWR, _______, _______,             _______, _______, _______
+                                    _______, _______, _______,             _______, _______, _______
 ),
 
-/* _ADJUST Layer
+/* _ADJUST Layer,
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      | ZIFK |  ZSK |                    | EMAIL|  Up  |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -127,10 +135,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------'     '---------''----------------------'
  */
 [_ADJUST] = LAYOUT(
-    QK_BOOTLOADER, _______, _______, _______, ZIFK,    ZSK,                      EMAIL,   _______,   KC_UP, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+    QK_AUDIO_CLICKY_TOGGLE, _______, _______, _______,_______, SC_SELECT,   EMAIL, _______,   KC_UP, _______, _______, _______,
+    _______, _______, _______, _______, SC_AREA, SC_AREA2,                  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
     RGB_TOG, RGB_MOD, RGB_RMOD, RGB_VAI, RGB_VAD, RGB_HUD,                RGB_HUI, RGB_SAD, RGB_SAI, RGB_SPI, RGB_SPD, RGB_TOG,
-                                _______, _______, _______,             TD(B1_B2), _______, _______
-)
-
-};
+                                _______, _______, KC_PWR,             TD(B1_B2), _______, _______
+)};
