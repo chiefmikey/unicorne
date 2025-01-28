@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Unicorne Configs",
   "devDependencies": {
-    "mikey-pro": "^7.5.3"
+    "mikey-pro": "^8.0.9"
   },
   "author": "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)",
   "prettier": "@mikey-pro/prettier-config",
