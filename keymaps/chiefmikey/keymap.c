@@ -99,9 +99,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------'     '---------''----------------------'
  */
 [_LOWER] = LAYOUT(
-    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                       KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_DEL,
+    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                       KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_BSPC,
     KC_TAB,  KC_AT,   KC_DLR,  KC_LBRC, KC_LPRN, KC_LCBR,                    KC_RCBR, KC_RPRN, KC_RBRC, KC_MINS, _______, KC_BSLS,
-    _______, KC_AMPR, KC_HASH, KC_PERC, KC_EXLM, KC_PLUS,                    KC_CIRC, _______, _______, _______, _______, _______,
+    _______, KC_AMPR, KC_HASH, KC_PERC, KC_EXLM, KC_PLUS,                    KC_CIRC, _______, _______, _______, _______, KC_DEL,
                                     KC_ASTR, _______, _______,            _______, _______, _______
 ),
 
@@ -118,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT(
     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,                 KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,
-    _______,  _______,  _______,  _______,  _______,  _______,              _______,  _______,  _______,  KC_MPLY,  KC_VOLU,  KC_MUTE,
-    _______,  _______,  _______,  _______,  _______,  _______,              _______,  _______,  _______,  KC_MPRV,  KC_VOLD,  KC_MNXT,
+    KC_PPLS,  KC_P1,    KC_P2,    KC_P3,    KC_P4,    KC_P5,                 KC_HOME,  _______,  _______,  KC_MPLY,  KC_VOLU,  KC_MUTE,
+    KC_PMNS,  KC_P6,    KC_P7,    KC_P8,    KC_P9,    KC_P0,                 _______,  _______,  _______,  KC_MPRV,  KC_VOLD,  KC_MNXT,
                                    _______,  _______,  _______,              _______,  _______,  _______
 ),
 
@@ -138,5 +138,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_AUDIO_CLICKY_TOGGLE, _______, _______, _______,_______, SC_SELECT,   EMAIL, _______,   KC_UP, _______, _______, _______,
     _______, _______, _______, _______, SC_AREA, SC_AREA2,                  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
     RGB_TOG, RGB_MOD, RGB_RMOD, RGB_VAI, RGB_VAD, RGB_HUD,                RGB_HUI, RGB_SAD, RGB_SAI, RGB_SPI, RGB_SPD, RGB_TOG,
-                                _______, _______, KC_PWR,             TD(B1_B2), _______, _______
+                                _______, _______, QK_BOOT,                TD(B1_B2), _______, _______
 )};
