@@ -22,7 +22,8 @@ enum custom_keycodes {
     EMAIL = SAFE_RANGE,
     SC_SELECT,
     SC_AREA,
-    SC_AREA2
+    SC_AREA2,
+    ITERM2
 };
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -59,6 +60,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case SC_AREA2:
             if (record->event.pressed) {
                 SEND_STRING(SS_LGUI(SS_LSFT("5")));
+                wait_ms(100);
+                SEND_STRING(SS_TAP(X_ENTER));
+            }
+            break;
+        case ITERM2:
+            if (record->event.pressed) {
+                SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+                wait_ms(100);
+                SEND_STRING("iterm2");
                 wait_ms(100);
                 SEND_STRING(SS_TAP(X_ENTER));
             }
@@ -136,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT(
     _______, _______, _______, _______,_______, SC_SELECT,                EMAIL, _______,   KC_UP, _______, _______, QK_AUDIO_CLICKY_TOGGLE,
-    _______, _______, _______, _______, SC_AREA, SC_AREA2,                _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
-    _______, _______, _______, _______, _______, _______,                 _______, _______, _______, _______, _______, _______,
+    _______, _______, ,_______ _______, SC_AREA, SC_AREA2,                _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+    _______, _______, _______, ITERM2, _______, _______,                 _______, _______, _______, _______, _______, _______,
                                 RGB_TOG, _______, QK_BOOT,                TD(B1_B2), _______, _______
 )};
